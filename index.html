@@ -238,7 +238,12 @@ function analyzeWords() {
   <input type="text" id="surahInput" placeholder="مثال: البقرة أو 2"
     class="w-64 p-2 border rounded-lg text-center mb-2" />
   <br>
-  <button onclick="fetchSurahByNameOrNumber()" class="bg-green-700 hover:bg-green-800 text-white py-2 px-4 rounded-xl mt-2 text-sm">
+ <div style="text-align:center; margin-top: 20px;">
+  <input type="text" id="surahInput" placeholder="أدخل رقم السورة أو اسمها بالعربية" style="padding:8px; font-size:16px;" />
+ <button onclick="onFetchSurah()" style="padding:8px 12px; font-size:16px;">📖 عرض السورة</button>
+
+</div>
+
     جلب السورة وتحليلها
   </button>
 </div>
