@@ -760,22 +760,7 @@ function onFetchSurah() {
   <button onclick="loadSurah()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded ml-2">عرض السورة</button>
 </div>
 
-<script>
-  function loadSurah() {
-    const surahInput = document.getElementById("surahInput").value.trim();
-    fetch("surahs_full.json")
-      .then(res => res.json())
-      .then(data => {
-        const filtered = data.filter(ayah =>
-          ayah.surah == surahInput || ayah.surah_name_ar.includes(surahInput)
-        );
-        const text = filtered.map(a => a.text).join(" ");
-        document.getElementById("textInput").value = text;
-        analyzeText(); // يشغل التحليل تلقائيًا
-      })
-      .catch(err => {
-        alert("فشل تحميل السورة. تأكد من أن الملف surahs_full.json موجود.");
-        console.error(err);
+
       });
   }
 </script>
