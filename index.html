@@ -676,13 +676,7 @@ window.addEventListener("DOMContentLoaded", function () {
   }
 }); 
 </script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(reg => console.log('✅ Service Worker مسجّل:', reg))
-      .catch(err => console.log('❌ فشل تسجيل Service Worker:', err));
-  }
-</script>
+
 <script>
 let deferredPrompt;
 
@@ -708,6 +702,12 @@ function installApp() {
   }
 }
 </script>
-
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/digital-analysis4/sw.js', { scope: '/digital-analysis4/' });
+  });
+}
+</script>
 </body>
 </html>
